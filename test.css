@@ -1,103 +1,356 @@
-body,html{
+* {
+    box-sizing: border-box;
+}
+
+
+body,
+html {
     font-family: Arial, 'Helvetica', sans-serif;
     margin: 0;
-}
-
-
-#Titre{
-    text-align: center;
-}
-
-#Container{
-
-    align-items: center;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    margin:0;
-    
-
-}
-
-#texte{
-
-    margin: 5%;
-    padding: 5%;
-    justify-content: center;
   
 }
 
 
+#Titre {
+    text-align: center;
+}
+
+#Container {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+
+}
+
+#texte {
+
+    margin: 5%;
+    padding: 5%;
+    justify-content: center;
+
+}
 
 
 
- .menu{
+
+
+.menu {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 15vh;
     align-items: center;
     justify-content: space-around;
- 
+
 
 
 }
 
-.menu ul{
-    display:flex;
-    gap:40px;
+.menu ul {
+    display: flex;
+    gap: 40px;
 }
 
 
 
-.menu ul , li , a{
-    color:black;
+.menu ul li,
+a {
+    color: black;
     list-style: none;
+    list-style-type: none;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 10px;
     font-size: 1em;
     transition: ease-in-out .4s;
+
 }
 
 
 
-.menu ul,li, a:hover{
-    color: red;
+.menu ul li a:hover {
+    color: tomato;
+}
+
+a:hover{
+    color: tomato;
 }
 
 
-#Logo{
-    color:black;
+#Logo {
+    color: white;
     letter-spacing: 10px;
     font-size: 2em;
-    padding:1%;
-    outline-style: dashed;
+    padding: 1%;
+    font-family: Tahoma;
+    background-color: tomato;
 
 
-} 
+}
 
-#ContainerimageGirafe{
-    background-color: red;
-    padding: 5%;
+
+
+
+
+
+
+
+
+.grid-container {
+    margin: 2%;
+    display: grid;
+    padding: 2%;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+    grid-gap: 2em;
+
+}
+
+img {
+
+    width: 100%;
+
+    height: auto;
+
+}
+
+.location-listing {
+
+    position: relative;
+
+
+    overflow: hidden;
+
+}
+
+
+.location-title {
+    z-index: 1;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    background: rgba(90, 0, 10, 0.4);
+
+
+}
+
+.location-image {
+
+    line-height: 0;
+
+}
+
+
+.location-title {
+    opacity: 0;
+
+    transition: opacity .5s;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    background: rgba(90, 0, 10, 0.4);
+
+
+
+
+
+    color: white;
+
+    font-size: 1.5em;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+
+
+
+
+    display: flex;
+
+    align-items: center;
+
     justify-content: center;
 
 }
 
-#imgGirafe{
-    object-fit: cover;
+.location-listing:hover .location-title {
+
+    opacity: 1;
+
+}
+
+.location-image img {
+
+    filter: blur(0px);
+
+    transition: filter 0.3s ease-in;
+
+    transform: scale(1.1);
+
+}
+
+
+.location-listing:hover .location-image img {
+
+    filter: blur(2px);
+
+}
+
+#banner {
+    display: flex;
+    background-color: tomato;
+
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 30vh;
 
 }
 
 
-@media screen and (min-width: 1080px) {
 
-#ContainerimageGirafe{
-    background-color: blue;
 
+#Slogan {
+    color: white;
+    
+    font-size: 3rem;
+    font-weight: 100;
+    line-height: 1.5;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 550px;
 }
-  
-} 
 
+#Slogan span {
+    font-size: 40px;
+    margin-left: -50%;
+}
+
+.message {
+    background-color: yellow;
+    color: #333;
+    display: block;
+    font-weight: 900;
+    overflow: hidden;
+    position: absolute;
+    padding-left: 0.5rem;
+    top: 0.2rem;
+    left: 270px;
+    animation: openclose 5s ease-in-out infinite;
+}
+
+.word1,
+.word2,
+.word3 {
+    font-family: tahoma;
+}
+
+@keyframes openclose {
+    0% {
+        top: 0.2rem;
+        width: 0;
+    }
+
+    5% {
+        width: 0;
+    }
+
+    15% {
+        width: 230px;
+    }
+
+    30% {
+        top: 0.2rem;
+        width: 230px;
+    }
+
+    33% {
+        top: 0.2rem;
+        width: 0;
+    }
+
+    35% {
+        top: 0.2rem;
+        width: 0;
+    }
+
+    38% {
+        top: -4.5rem;
+
+    }
+
+    48% {
+        top: -4.5rem;
+        width: 290px;
+    }
+
+    62% {
+        top: -4.5rem;
+        width: 290px;
+    }
+
+    66% {
+        top: -4.5rem;
+        width: 0;
+        text-indent: 0;
+    }
+
+    71% {
+        top: -9rem;
+        width: 0;
+        text-indent: 5px;
+    }
+
+    86% {
+        top: -9rem;
+        width: 285px;
+    }
+
+    95% {
+        top: -9rem;
+        width: 285px;
+    }
+
+    98% {
+        top: -9rem;
+        width: 0;
+        text-indent: 5px;
+    }
+
+    100% {
+        top: 0;
+        width: 0;
+        text-indent: 0;
+    }
+}
+
+
+#BOUTON_TEST{
+    padding: 5%;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
